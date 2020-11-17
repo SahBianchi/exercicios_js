@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cifra de Cesar</title>
+</head>
+<body>
+    <script>
+        let perguntaNome = prompt("Digite uma palavra")
+        let palavra = perguntaNome.toLocaleUpperCase()
+        let perguntaDeslocamento = prompt("Digite um numero para ser deslocado")
+        let deslocamento = perguntaDeslocamento3
+        let letras = []
+        let numerosIniciais = []
+        let numerosFinais = []
+        let letrasFinais= []
+
+        function cifraDeCesar (palavra, deslocamento){
+            //Andar em cada letra da palavra
+            for(let i = 0; i < palavra.length; i++){
+
+                //guardando a letra
+                let letra = palavra[i]
+
+                //adicionamos as letras na lista
+                letras.push(palavra[i])
+
+                //transformando letra em código
+                let numeroInicial = letra.charCodeAt(letra)
+
+                //colocar numeros dentro da lista
+                numerosIniciais.push(numeroInicial)
+
+                //adicionar o deslocamento no numero inicial
+                let numeroFinal = numeroInicial+deslocamento
+
+                if(numeroFinal >= 90){
+                    numeroFinal -=26
+
+                }
+
+                //colocar os numeros dentro da lista
+                numerosFinais.push(numeroFinal)
+
+                //transformar o numeroFinal em letra
+                let letraFinal = String.fromCharCode(numeroFinal)
+
+                letrasFinais.push(letraFinal)
+
+                console.log(letra)
+                console.log(numeroInicial)
+                console.log(numeroFinal)
+
+            
+            }
+            console.log(letras)
+            console.log(numerosIniciais)
+            console.log(numerosFinais)
+            console.log(letrasFinais)
+        }
+        cifraDeCesar(palavra, deslocamento)
+    </script>
+    
+</body>
+</html>
